@@ -4,7 +4,7 @@ FROM alpine:latest
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN apk add curl bash sudo && \
+RUN apk add curl bash sudo git jq && \
     curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest 
 
 WORKDIR /opt/data
